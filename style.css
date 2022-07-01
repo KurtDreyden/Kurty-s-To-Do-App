@@ -3,26 +3,39 @@
     padding: 0;
     box-sizing: border-box;
 }
+/*body Section*/
+
+body{
+    background: "coding.jpg";
+    width: auto;
+  
+}
+.image{
+    width: 3px;
+    height: 250px; 
+}
+/*Container Section*/
 
 .container{
     width: 350px;
     height: 400px;
-    background: silver;
+    background: #0c0b0bc7;
     position: absolute;
     top: 20%;
     left: 30%;
     border-radius: 10px;
   
 }
+/* Todo List Secion*/
 
 .todoList{
     display: flex;
     justify-content: space-between;
     margin: 10px;
     align-items: center;
-    background: green;
+    background: #ffffff;
     padding: 5px;
-  border-bottom: 1px solid plum;
+  border-bottom: 1px solid gray;
   border-radius: 5px;
   height: 40px;
   box-shadow: 5px 5px rgb(0, 0, 1, 0.5);
@@ -31,23 +44,26 @@
   width: 325px;
   
 }
+/*delete the Task icon#*/
+
 .deleteTask{
     cursor: pointer;
  width: 25px;
  height: 25px;
     text-align: center;
     border-radius: 50%;
-    background: yellow;
-    color: black;
+    background:yellow;
+    color:grey;
     outline: none;
     align-items: center;
   margin: 0;
   padding: 0;
 }
-.pText{
+.deleteText{
     background: #ffffff;
     text-transform: capitalize;
    
+    /*Input Value*/
 }
 .inputvalue{
    
@@ -61,12 +77,14 @@
     border-radius: 5px;
     margin-right: 5px;
     
-    border: 2px solid green;
+    border: 2px solid rgb(69, 5, 187);
+  
 }
+/*Button Input Section*/
 .button{
     width: 100px;
-    background: green;
-    color: #ffffff;
+    background:yellow;
+    color: grey;
     text-transform: uppercase;
     font-weight: bold;
     outline-style: none;
@@ -74,16 +92,23 @@
     box-shadow: 1px 1px #03110c;;
     
 }
+/*Remove Task Section*/
 .clearTask{
     position: absolute;
    bottom: 5px;
    left: 15%;
-   background: green;
-   color: #ffffff;
+   background: yellow;
+   color: grey;
    width: 250px;
    height: 35px;
    border-radius: 5px;
-   text-transform: capitalize;
+   text-transform:uppercase;
    font-weight: bold;
    cursor: pointer;
+   outline-style: none;
+}
+/* Media queries*/
+
+@media (max-width:1000px){
+
 }

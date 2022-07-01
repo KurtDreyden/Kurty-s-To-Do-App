@@ -38,7 +38,7 @@ taskList.forEach((data, index )=> {
     html += `
     <div class="todoList">
     <p class="pText">${data}</p>
-    <button class="deleteTask" onClick="deleteItem(${index})">x</button>
+    <button class="deleteTask" onClick="deleteItem(${index})">#</button>
     </div>
     `
 })

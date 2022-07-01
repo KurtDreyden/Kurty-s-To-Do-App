@@ -1,25 +1,34 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Kurtys To-do</title>
+    <title>Kurt's todo app</title>
 </head>
 <body>
-    
+
+    <!--Image section-->
+
+    <div class="image">
+    <img src="images/coding.jpg" alt="coding">
+    </div>
+
+    <!--Container Section-->
+
     <div class="container">
         <div class="myTodo">
+            <!--Input of task-->
+
             <div class="inputvalue">
-                <input class="inputVal" type="text" placeholder="Add your task" value="">
-                <button class="button">Add Task</button>
+                <input class="inputVal" type="text" placeholder="Input task" value="">
+                <button class="button">Add</button>
             </div>
-            
-           
             <div class="todoLists">
-                
             </div>
-            <button class="clearTask" onclick="clearTask()">Clear all</button>
+
+            <!--Removal of task-->
+
+            <button class="clearTask" onclick="clearTask()">Remove Task</button>
         </div>
     </div>
     <script src="Javascript.js"></script>
