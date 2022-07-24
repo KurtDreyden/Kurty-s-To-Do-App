@@ -1,36 +1,23 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Kurt's todo app</title>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>TODO List</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <link href="https://fonts.googleapis.com/css?family=Hind&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
 </head>
 <body>
-
-    <!--Image section-->
-
-    <div class="image">
-    <img src="images/coding.jpg" alt="coding">
+    <h1><class="title">TodoList</h1>
+    <div class="inputDiv">
+    	   <input type="text" class="input" placeholder="Add your list">
+    	   <button class="add"><i class="fas fa-plus"></i></button>
     </div>
-
-    <!--Container Section-->
-
     <div class="container">
-        <div class="myTodo">
-            <!--Input of task-->
-
-            <div class="inputvalue">
-                <input class="inputVal" type="text" placeholder="Input task" value="">
-                <button class="button">Add</button>
-            </div>
-            <div class="todoLists">
-            </div>
-
-            <!--Removal of task-->
-
-            <button class="clearTask" onclick="clearTask()">Remove Task</button>
-        </div>
     </div>
-    <script src="Javascript.js"></script>
+    <script src='Javascript.js'></script>
 </body>
-</html>
+</html> 

@@ -1,60 +1,92 @@
-const inputVal = document.getElementsByClassName('inputVal')[0];
+const container = document.querySelector('.container');
+var inputValue = document.querySelector('.input');
+const add = document.querySelector('.add');
 
- const addTaskBtn = document.getElementsByClassName('button')[0];
- 
-
-addTaskBtn.addEventListener('click', function (){
-  
-if(inputVal.value.trim()!=0){
-       let localItems = JSON.parse( localStorage.getItem('localItem'))
-    if(localItems === null){
-         taskList = []
-
-    }else{
-        taskList = localItems;
-    }
-    taskList.push(inputVal.value)
-    localStorage.setItem('localItem', JSON.stringify(taskList)); 
+/*local Storage*/
+if(window.localStorage.getItem("todos") == undefined){
+     var todos = [];
+     window.localStorage.setItem("todos", JSON.stringify(todos));
 }
 
-    showItem()
+var todosEX = window.localStorage.getItem("todos");
+var todos = JSON.parse(todosEX);
+
+
+class item{
+	constructor(name){
+		this.createItem(name);
+	}
+
+    /*Edit & Remove inputs and buttons*/
+    createItem(name){
+    	var itemBox = document.createElement('div');
+        itemBox.classList.add('item');
+
+    	var input = document.createElement('input');
+    	input.type = "text";
+    	input.disabled = true;
+    	input.value = name;
+    	input.classList.add('inputList');
+
+    	var edit = document.createElement('button');
+    	edit.classList.add('edit');
+    	edit.innerHTML = "EDIT";
+    	edit.addEventListener('click', () => this.edit(input, name));
+
+    	var remove = document.createElement('button');
+    	remove.classList.add('remove');
+    	remove.innerHTML = "remove";
+    	remove.addEventListener('click', () => this.remove(itemBox, name));
+
+    	container.appendChild(itemBox);
+
+        itemBox.appendChild(input);
+        itemBox.appendChild(edit);
+        itemBox.appendChild(remove);
+
+    }
+
+    /*Edit function*/
+
+    edit(input, name){
+        if(input.disabled == true){
+           input.disabled = !input.disabled;
+        }
+    	else{
+            input.disabled = !input.disabled;
+            let indexof = todos.indexOf(name);
+            todos[indexof] = input.value;
+            window.localStorage.setItem("todos", JSON.stringify(todos));
+        }
+    }
+
+/*remove function*/
+    remove(itemBox, name){
+        itemBox.parentNode.removeChild(itemBox);
+        let index = todos.indexOf(name);
+        todos.splice(index, 1);
+        window.localStorage.setItem("todos", JSON.stringify(todos));
+    }
+}
+
+add.addEventListener('click', check);
+window.addEventListener('keydown', (e) => {
+	if(e.which == 13){
+		check();
+	}
 })
 
-function showItem(){
-    let localItems = JSON.parse( localStorage.getItem('localItem'))
-    if(localItems === null){
-         taskList = []
-
-    }else{
-        taskList = localItems;
-    }
-
-
-let html = '';
-let itemShow = document.querySelector('.todoLists');
-taskList.forEach((data, index )=> {
-    
-
-    html += `
-    <div class="todoList">
-    <p class="pText">${data}</p>
-    <button class="deleteTask" onClick="deleteItem(${index})">#</button>
-    </div>
-    `
-})
-itemShow.innerHTML = html;
-}
-showItem()
-
-function deleteItem(index){
-    let localItems = JSON.parse( localStorage.getItem('localItem'))
-    taskList.splice(index, 1)
-    localStorage.setItem('localItem', JSON.stringify(taskList));
-    showItem()
+function check(){
+	if(inputValue.value != ""){
+		new item(inputValue.value);
+        todos.push(inputValue.value);
+        window.localStorage.setItem("todos", JSON.stringify(todos));
+		inputValue.value = "";
+	}
 }
 
-function clearTask(){
-    
-localStorage.clear()
-showItem()
+
+for (var v = 0 ; v < todos.length ; v++){
+    new item(todos[v]);
 }
+

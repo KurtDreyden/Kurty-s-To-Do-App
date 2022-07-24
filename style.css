@@ -1,114 +1,106 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-/*body Section*/
 
 body{
-    background: "coding.jpg";
-    width: auto;
-  
+    height: 100%;
+    background-color: #111;
+    box-sizing: border-box;
+    background-image: url(https://wallpaperaccess.com/full/334698.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-.image{
-    width: 3px;
-    height: 250px; 
+
+h1 {
+	color: #fff;
+	font-size: 3rem;
+	font-weight: 50;
+	text-align: center;
+	margin: 1rem 0 3rem; 
+	font-family: 'Hind', sans-serif;
 }
-/*Container Section*/
+
+.inputDiv{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.input{
+    padding: 0.5rem 1rem;
+    outline: none;
+    border: none;
+    height: 50px;
+    border-radius: 25px;
+    width: 350px;
+    margin: 0.25rem;
+    transition: .5s;
+    font-size: 1.15rem;
+}
+/*add styling*/
+
+.add{
+	outline: none;
+    border: none;
+    height: 50px;
+    border-radius: 25px;
+    width: 50px;
+    background-color:orange;
+    color: white;
+    cursor: pointer;
+    transition: .5s;
+    margin: 0.25rem;
+}
+/*hover*/
+
+.add:hover{
+	opacity: 0.7;
+}
 
 .container{
-    width: 350px;
-    height: 400px;
-    background: #0c0b0bc7;
-    position: absolute;
-    top: 20%;
-    left: 30%;
-    border-radius: 10px;
-  
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin-top: 2rem;
 }
-/* Todo List Secion*/
 
-.todoList{
-    display: flex;
-    justify-content: space-between;
-    margin: 10px;
-    align-items: center;
-    background: #ffffff;
-    padding: 5px;
-  border-bottom: 1px solid gray;
-  border-radius: 5px;
-  height: 40px;
-  box-shadow: 5px 5px rgb(0, 0, 1, 0.5);
-  font-weight: bold;
-  flex-wrap: wrap;
-  width: 325px;
-  
+.item{
+	padding: 0.5rem;
+	border-bottom: 4px solid #fff;
+	margin-bottom: 1.5rem;
 }
-/*delete the Task icon#*/
+/*list input*/
+.inputList{
+	background: none;
+	outline: none;
+	border: none;
+	color: cornflowerblue;
+	font-size: 1.4rem;
+	width: 245px;
+}
 
-.deleteTask{
-    cursor: pointer;
- width: 25px;
- height: 25px;
-    text-align: center;
-    border-radius: 50%;
-    background:yellow;
-    color:grey;
-    outline: none;
-    align-items: center;
-  margin: 0;
-  padding: 0;
+/*Edit&remove styling*/
+.edit{
+	background: none;
+	outline: none;
+	border: none;
+	color: blue;
+	font-size: 1.4rem;
+	font-family: 'Hind', sans-serif;
+	margin: 0 0.5rem;
+	cursor: pointer;
 }
-.deleteText{
-    background: #ffffff;
-    text-transform: capitalize;
-   
-    /*Input Value*/
-}
-.inputvalue{
-   
-    display: flex;
-    margin: 5px;
-    margin-bottom: 60px;
-}
-.inputVal{
-    width: 250px;
-    height: 40px;
-    border-radius: 5px;
-    margin-right: 5px;
-    
-    border: 2px solid rgb(69, 5, 187);
-  
-}
-/*Button Input Section*/
-.button{
-    width: 100px;
-    background:yellow;
-    color: grey;
-    text-transform: uppercase;
-    font-weight: bold;
-    outline-style: none;
-    border-radius: 5px;
-    box-shadow: 1px 1px #03110c;;
-    
-}
-/*Remove Task Section*/
-.clearTask{
-    position: absolute;
-   bottom: 5px;
-   left: 15%;
-   background: yellow;
-   color: grey;
-   width: 250px;
-   height: 35px;
-   border-radius: 5px;
-   text-transform:uppercase;
-   font-weight: bold;
-   cursor: pointer;
-   outline-style: none;
-}
-/* Media queries*/
 
-@media (max-width:1000px){
-
+.remove{
+	background: none;
+	outline: none;
+	border: none;
+	color: orange;
+	font-size: 1.4rem;
+	font-family: 'Hind', sans-serif;
+	cursor: pointer;
 }
